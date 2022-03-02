@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 require('./routes')(app);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3003;
 const server = app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}. http://35.178.91.217/:${PORT}/`);  // Server Connnected
 });
