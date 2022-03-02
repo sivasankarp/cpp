@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:3000/"
+  origin: "http://35.178.91.217/:3000/"
 };
 
 app.use(cors());
@@ -26,7 +26,7 @@ require('./routes')(app);
 // set port, listen for requests
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}. http://localhost:${PORT}/`);  // Server Connnected
+  console.log(`Server is running on port ${PORT}. http://35.178.91.217/:${PORT}/`);  // Server Connnected
 });
 
 
