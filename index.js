@@ -8,12 +8,12 @@ var corsOptions = {
   origin: "http://35.178.91.217:3003/"
 };
 
-var allowCrossDomain=function(req,res,next){
-  res.header('Access-Control-Allow-Origin',"*");
-  res.header('Access-Control-Allow-Methods','GET,POST,PUT,DELETE,OPTIONS' );
-  res.header('Access-Control-Allow-Headers','Content-Type');
-  next();
-};
+// var allowCrossDomain=function(req,res,next){
+//   res.header('Access-Control-Allow-Origin',"*");
+//   res.header('Access-Control-Allow-Methods','GET,POST,PUT,DELETE,OPTIONS' );
+//   res.header('Access-Control-Allow-Headers','Content-Type');
+//   next();
+// };
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -28,7 +28,7 @@ app.use(bodyParser.json());
 
 // parse requests of content-type: application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(allowCrossDomain);
+// app.use(allowCrossDomain);
 
 // simple route
 app.get("/", (req, res) => {
@@ -40,7 +40,7 @@ require('./routes')(app);
 // set port, listen for requests
 const PORT = process.env.PORT || 3003;
 const server = app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}. http://35.178.91.217/:${PORT}/`);  // Server Connnected
+  console.log(`Server is running on port ${PORT}. http://35.178.91.217:${PORT}/`);  // Server Connnected
 });
 
 
